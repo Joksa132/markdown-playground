@@ -13,7 +13,9 @@ export default function MarkdownPreview({ markdown }: Props) {
         <h2 className="uppercase text-xs text-slate-400 tracking-wider">preview</h2>
       </div>
       <div className="border-t-[1px] h-[calc(100vh-88px)] overflow-y-scroll p-2">
-        <ReactMarkdown children={markdown} remarkPlugins={[remarkGfm]} className="prose" />
+        <ReactMarkdown remarkPlugins={[remarkGfm]} className="prose">
+          {markdown}
+        </ReactMarkdown>
       </div>
     </div>
   )
