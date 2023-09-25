@@ -1,5 +1,6 @@
 "use client"
 
+import { enqueueSnackbar } from "notistack";
 import { createContext, useEffect, useState } from "react";
 
 type MarkdownContextType = {
@@ -22,6 +23,7 @@ export function MarkdownProvider({ children }: { children: React.ReactNode }) {
 
   const saveMarkdown = (content: string) => {
     localStorage.setItem('markdown', content);
+    enqueueSnackbar('Markdown successfully saved!')
   }
 
   return (
