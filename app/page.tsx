@@ -5,6 +5,7 @@ import MarkdownInput from "@/components/MarkdownInput"
 import MarkdownPreview from "@/components/MarkdownPreview"
 import { MarkdownContext } from "@/context/MarkdownContext"
 import { useContext } from "react"
+import { SnackbarProvider } from 'notistack'
 
 export default function Home() {
   const { markdownInput, setMarkdownInput } = useContext(MarkdownContext)
@@ -16,6 +17,7 @@ export default function Home() {
         <MarkdownInput markdown={markdownInput} setMarkdownInput={setMarkdownInput} />
         <MarkdownPreview markdown={markdownInput} />
       </main>
+      <SnackbarProvider autoHideDuration={3000} />
     </div>
   )
 }
