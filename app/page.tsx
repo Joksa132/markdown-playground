@@ -14,7 +14,7 @@ export default function Home() {
     <div className="flex flex-col w-full h-screen">
       <Header />
       <main className="flex">
-        <MarkdownInput markdown={markdownInput} setMarkdownInput={setMarkdownInput} />
+        <MarkdownInput markdown={markdownInput} setMarkdownInput={setMarkdownInput} isMain={true} />
         <MarkdownPreview markdown={markdownInput} />
       </main>
       <SnackbarProvider autoHideDuration={3000} />
