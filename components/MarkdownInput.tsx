@@ -42,7 +42,7 @@ export default function MarkdownInput({ markdown, setMarkdownInput, isMain, setS
           </div>
           :
           <textarea
-            className="resize-none outline-none border-t-[1px] p-2 text-lg h-[calc(100vh-88px)] overflow-y-scroll"
+            className="w-full resize-none outline-none border-t-[1px] p-2 text-lg h-[calc(100vh-90px)] overflow-y-scroll"
             name="markdownHelp"
             id="markdownHelp"
             value={markdown}
