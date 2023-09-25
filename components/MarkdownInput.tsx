@@ -16,9 +16,9 @@ export default function MarkdownInput({ setMarkdownInput }: Props) {
       <div className="px-4 py-3">
         <h2 className="uppercase text-xs text-slate-400 tracking-wider">markdown</h2>
       </div>
-      <div className="overflow-y-scroll h-[calc(100vh-88px)] py-1">
+      <div className="border-t-[1px] overflow-y-scroll h-[calc(100vh-88px)] py-1">
         <CodeMirror
-          className="border-t-[1px] text-lg"
+          className="text-lg"
           onChange={handleMarkdownChange}
           extensions={[
             EditorView.lineWrapping
