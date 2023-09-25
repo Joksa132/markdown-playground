@@ -2,10 +2,11 @@ import CodeMirror from "@uiw/react-codemirror";
 import { EditorView } from "@codemirror/view";
 
 type Props = {
+  markdown: string;
   setMarkdownInput: React.Dispatch<React.SetStateAction<string>>;
 }
 
-export default function MarkdownInput({ setMarkdownInput }: Props) {
+export default function MarkdownInput({ markdown, setMarkdownInput }: Props) {
 
   const handleMarkdownChange = (markdown: string) => {
     setMarkdownInput(markdown)
@@ -23,6 +24,7 @@ export default function MarkdownInput({ setMarkdownInput }: Props) {
           extensions={[
             EditorView.lineWrapping
           ]}
+          value={markdown}
         />
       </div>
     </div>
