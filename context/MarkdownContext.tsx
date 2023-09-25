@@ -18,7 +18,7 @@ export function MarkdownProvider({ children }: { children: React.ReactNode }) {
     if (savedMarkdown) {
       setMarkdownInput(savedMarkdown)
     }
-  })
+  }, [])
 
   const saveMarkdown = (content: string) => {
     localStorage.setItem('markdown', content);
