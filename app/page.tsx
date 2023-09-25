@@ -14,7 +14,7 @@ export default function Home() {
   return (
     <div className="flex flex-col w-full h-screen">
       <Header />
-      <main className="flex max-[600px]:flex-col">
+      <main className="flex">
         <MarkdownInput
           markdown={markdownInput}
           setMarkdownInput={setMarkdownInput}
