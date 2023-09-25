@@ -10,7 +10,7 @@ export default function Help() {
   const [showPreview, setShowPreview] = useState<boolean>(false)
 
   return (
-    <div className="flex flex-col w-full h-screen">
+    <div className="flex flex-col w-full h-screen overflow-hidden">
       <Header />
       <div className="flex">
         <MarkdownInput
