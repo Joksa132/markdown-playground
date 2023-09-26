@@ -31,7 +31,7 @@ export default function Header({ convertedHtml }: { convertedHtml: string }) {
             Export as
             <BiSolidChevronDown />
           </span>
-          <div className={`${isMenuClicked ? 'flex' : 'hidden'} flex-col p-2 gap-2 absolute h-20 w-full bg-slate-800 mt-3 z-20`}>
+          <div className={`${isMenuClicked ? 'flex' : 'hidden'} flex-col p-2 gap-2 absolute w-full bg-slate-800 mt-3 z-20`}>
             <span
               className="cursor-pointer hover:text-slate-300 tracking-widest"
               onClick={() => exportAsMarkdown(markdownInput)}
