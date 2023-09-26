@@ -46,6 +46,7 @@ export default function MarkdownInput({ markdown, setMarkdownInput, isMain, setS
             <CodeMirror
               className="text-lg"
               extensions={[
+                EditorView.lineWrapping,
                 EditorState.readOnly.of(true)
               ]}
               value={markdown}
