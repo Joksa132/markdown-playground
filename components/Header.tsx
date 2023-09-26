@@ -4,20 +4,11 @@ import Link from 'next/link'
 import { useContext, useState } from "react"
 import { BiSolidChevronDown, BiLogoGithub } from 'react-icons/bi'
 import { MarkdownContext } from "@/context/MarkdownContext"
+import { exportAsMarkdown, exportAsHtml } from '@/util/exportFunctions'
 
-export default function Header() {
+export default function Header({ convertedHtml }: { convertedHtml: string }) {
   const { markdownInput, saveMarkdown } = useContext(MarkdownContext)
   const [isMenuClicked, setIsMenuClicked] = useState<boolean>(false)
-
-  const exportMarkdownAsMarkdown = (markdownContent: string) => {
-    const blob = new Blob([markdownContent], { type: 'text/markdown' });
-    const url = URL.createObjectURL(blob);
-    const a = document.createElement('a');
-    a.href = url;
-    a.download = 'markdown.md';
-    a.click();
-    URL.revokeObjectURL(url);
-  };
 
   return (
     <header className="py-2 px-4 bg-slate-700 text-slate-200 flex justify-between items-center uppercase">
@@ -43,14 +34,14 @@ export default function Header() {
           <div className={`${isMenuClicked ? 'flex' : 'hidden'} flex-col p-2 gap-2 absolute h-20 w-full bg-slate-800 mt-3 z-20`}>
             <span
               className="cursor-pointer hover:text-slate-300 tracking-widest"
-              onClick={() => exportMarkdownAsMarkdown(markdownInput)}
+              onClick={() => exportAsMarkdown(markdownInput)}
             >
               Markdown
             </span>
-            <span className="cursor-pointer hover:text-slate-300 tracking-widest">
-              PDF
-            </span>
-            <span className="cursor-pointer hover:text-slate-300 tracking-widest">
+            <span
+              className="cursor-pointer hover:text-slate-300 tracking-widest"
+              onClick={() => exportAsHtml(convertedHtml)}
+            >
               HTML
             </span>
           </div>
