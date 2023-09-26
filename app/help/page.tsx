@@ -11,7 +11,7 @@ export default function Help() {
 
   return (
     <div className="flex flex-col w-full h-screen overflow-hidden">
-      <Header />
+      <Header convertedHtml={helpMarkdown} />
       <div className="flex">
         <MarkdownInput
           markdown={helpMarkdown}
@@ -24,6 +24,7 @@ export default function Help() {
           markdown={helpMarkdown}
           setShowPreview={setShowPreview}
           showPreview={showPreview}
+          setConvertedHtml={() => { }}
         />
       </div>
     </div>
