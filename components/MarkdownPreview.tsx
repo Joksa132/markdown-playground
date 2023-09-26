@@ -20,7 +20,7 @@ export default function MarkdownPreview({ markdown, setShowPreview, showPreview,
       const markdownHtml = markdownRef.current.innerHTML;
       setConvertedHtml(markdownHtml)
     }
-  }, [markdown])
+  }, [markdown, setConvertedHtml])
 
   return (
     <div className={`w-1/2 max-[600px]:w-full border-[1px] border-slate-200 ${showPreview ? 'max-[600px]:flex max-[600px]:flex-col' : 'max-[600px]:hidden'}`}>
