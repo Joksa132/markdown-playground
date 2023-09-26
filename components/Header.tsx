@@ -11,7 +11,7 @@ export default function Header({ convertedHtml }: { convertedHtml: string }) {
   const [isMenuClicked, setIsMenuClicked] = useState<boolean>(false)
 
   return (
-    <header className="py-2 px-4 bg-slate-700 text-slate-200 flex justify-between items-center uppercase">
+    <header className="py-2 px-4 bg-slate-700 text-slate-200 flex justify-between items-center uppercase font-medium">
       <Link href={"/"}>
         <h1 className="max-[380px]:hidden tracking-widest select-none text-[13px] hover:text-slate-400 cursor-pointer max-[500px]:text-[10px]">Markdown Playground</h1>
         <h1 className="hidden max-[380px]:block tracking-widest select-none text-[13px] hover:text-slate-400 cursor-pointer max-[500px]:text-[10px]">Home</h1>
