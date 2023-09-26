@@ -1,5 +1,6 @@
 import CodeMirror from "@uiw/react-codemirror";
 import { EditorView } from "@codemirror/view";
+import { EditorState } from "@uiw/react-codemirror";
 import { AiFillEye } from "react-icons/ai"
 
 type Props = {
@@ -35,19 +36,21 @@ export default function MarkdownInput({ markdown, setMarkdownInput, isMain, setS
               className="text-lg"
               onChange={handleMarkdownChange}
               extensions={[
-                EditorView.lineWrapping
+                EditorView.lineWrapping,
               ]}
               value={markdown}
             />
           </div>
           :
-          <textarea
-            className="w-full resize-none outline-none border-t-[1px] p-2 text-lg h-[calc(100vh-90px)] overflow-y-scroll"
-            name="markdownHelp"
-            id="markdownHelp"
-            value={markdown}
-            disabled
-          />
+          <div className="border-t-[1px] overflow-y-scroll h-[calc(100vh-88px)] py-1">
+            <CodeMirror
+              className="text-lg"
+              extensions={[
+                EditorState.readOnly.of(true)
+              ]}
+              value={markdown}
+            />
+          </div>
       }
     </div>
   )
