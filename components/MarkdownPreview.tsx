@@ -34,10 +34,12 @@ export default function MarkdownPreview({ markdown, setShowPreview, showPreview,
           markdown
         </span>
       </div>
-      <div className="border-t-[1px] h-[calc(100vh-90px)] overflow-y-scroll p-2 break-words w-full prose" ref={markdownRef}>
-        <ReactMarkdown remarkPlugins={[remarkGfm]}>
-          {markdown}
-        </ReactMarkdown>
+      <div className="border-t-[1px] h-[calc(100vh-90px)] overflow-y-scroll p-2 break-words w-full">
+        <div className="prose" ref={markdownRef}>
+          <ReactMarkdown remarkPlugins={[remarkGfm]}>
+            {markdown}
+          </ReactMarkdown>
+        </div>
       </div>
     </div>
   )
