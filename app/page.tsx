@@ -10,10 +10,11 @@ import { SnackbarProvider } from 'notistack'
 export default function Home() {
   const { markdownInput, setMarkdownInput } = useContext(MarkdownContext)
   const [showPreview, setShowPreview] = useState<boolean>(false)
+  const [convertedHtml, setConvertedHtml] = useState<string>('')
 
   return (
     <div className="flex flex-col w-full h-screen">
-      <Header />
+      <Header convertedHtml={convertedHtml} />
       <main className="flex">
         <MarkdownInput
           markdown={markdownInput}
@@ -26,6 +27,7 @@ export default function Home() {
           markdown={markdownInput}
           setShowPreview={setShowPreview}
           showPreview={showPreview}
+          setConvertedHtml={setConvertedHtml}
         />
       </main>
       <SnackbarProvider autoHideDuration={3000} />
